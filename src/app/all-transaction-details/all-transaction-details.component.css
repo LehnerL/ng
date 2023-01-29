@@ -1,0 +1,8 @@
+h1,p{text-align: center;}
+h1 {font-size: 26px; color:blueviolet;direction: rtl;text-align: center;}
+.minus{background-color:red;}
+input,textarea {direction: rtl;}
+#owner,#transaction {margin:0 auto;width:1200px;text-align:center}
+:invalid{background-color: red;}
+.notshown{display:none}
+table,tr,td{color:black; border: double;}

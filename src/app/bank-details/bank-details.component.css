@@ -1,0 +1,6 @@
+div {direction: rtl;text-align: center;}
+p{text-align: center;direction: rtl;}
+legend { direction: rtl; text-align:center; align-items: center;font-size: 26px; color:blueviolet;}
+h1 {font-size: 26px; color:blueviolet;direction: rtl;text-align: center;}
+:invalid{background-color: red;}
+:valid{background-color: green;}

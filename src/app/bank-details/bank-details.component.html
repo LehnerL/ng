@@ -1,0 +1,25 @@
+<br>
+<div *ngIf="edit">
+    <legend>עריכת פרטי הבנק</legend>
+    <label for=branchName>שם הסניף: </label>
+    <input type="text" id=branchName minlength="3" [(ngModel)]="branchName">
+    <br>
+    <label for=branchNumber>מספר הסניף: </label>
+    <input type="number" id=branchNumber minlength="2" min="1" [(ngModel)]="branchNumber">
+    <br>
+    <label  for=accountNumber>מספר חשבון: </label>
+    <input disabled type="number" id=accountNumber [(ngModel)]="accountNumber">
+    <br>
+    <button type=button (click)="updIt()">שמור שינויים</button>
+    <br>
+</div>
+
+<div *ngIf="!edit">
+    <h1>עריכת פרטי הבנק</h1>
+    <p> שם הסניף: {{branchName}}<br>
+        מספר הסניף: {{branchNumber}}<br>
+        מספר חשבון: {{accountNumber}}<br>
+    </p>
+    <button type=button (click)="changeDetails()">ערוך</button><br>
+    <a *ngIf="valid" routerLink="/AccountLogin">שינוי הצליח הקש כאן לכניסה מחדש למערכת</a>
+</div>

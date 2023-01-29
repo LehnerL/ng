@@ -1,0 +1,4 @@
+div {direction: rtl;;text-align: center;}
+:invalid{background-color: red;}
+:valid{background-color: green;}
+h1 {font-size: 26px; color:blueviolet;direction: rtl;text-align: center;}

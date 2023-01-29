@@ -1,0 +1,5 @@
+div,img {direction: rtl;text-align: center;align-items: center; justify-content: center;}
+legend,h1 {font-size: 26px; color:blueviolet;direction: rtl;text-align: center; }
+:invalid{background-color: red;}
+:valid{background-color: green;}
+.notshown{display:none}

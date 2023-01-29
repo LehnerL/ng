@@ -1,0 +1,30 @@
+<br>
+<h1>פירוט תנועות</h1>
+<div id="transactions">
+    <p *ngIf="all_actions.length==0">
+      לא נמצאו פעולות לחשבון
+    </p>
+  
+    <table *ngIf="all_actions.length>0" dir=rtl align="center" style="border: 1;">
+      <tr>
+        <td></td>
+        <td>תאריך</td>
+        <td>סכום</td>
+        <td>סוג פעולה</td>
+        <td>יתרה</td>
+        <td>אסמכתא</td>
+        <td>הערה</td>
+      </tr>
+      <tr *ngIf='currentTransaction' [class.minus]='currentTransaction.balance<0'>
+        <td >{{currentTransaction.counter}}</td>
+        <td >{{currentTransaction.trnDate | date : 'dd/MM/yyyy'}}</td>
+        <td >{{currentTransaction.amount | currency:'ILS'}}</td>
+        <td >{{transactionTypeNames[currentTransaction.trnTyp]}}</td>
+        <td >{{currentTransaction.balance | currency:'ILS'}}</td> 
+        <td >{{currentTransaction.asmachta || currentTransaction.counter}}</td> 
+        <td >{{currentTransaction.note }}</td>
+        <td ><button (click)="deleteAction(currentTransaction.counter)">מחק</button></td>
+        <td ><a routerLink="/Transactions"><button> חזור לרשימה</button></a></td>
+      </tr>
+    </table>  
+  </div>

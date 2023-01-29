@@ -1,0 +1,13 @@
+<div *ngIf="getShowMenu()">
+    <label for="currentOwner" >שם בעל\ת החשבון: {{getUserName()}} </label><br>
+    <label for="currentBalance">יתרה נוכחית: {{getBalance() | currency:'ILS'}}</label>
+</div>
+
+<div *ngIf="getShowMenu()">
+    <a routerLink="/AccountOwner"> <button>פרטי בעל החשבון</button></a>
+    <a routerLink="/BankDetails"> <button>פרטי בנק</button></a>
+    <a routerLink="/BankAccount"> <button>הזנת תנועות</button></a>
+    <a routerLink="/Transactions"> <button>רשימת תנועות</button></a>
+    <a routerLink="/ChangePassword"> <button>שנה סיסמה</button></a>
+    <button (click)="logOut()">התנתק</button>&nbsp;
+</div>

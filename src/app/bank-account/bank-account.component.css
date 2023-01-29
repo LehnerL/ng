@@ -1,0 +1,18 @@
+div,p{text-align: center;direction: rtl;align-items: center; justify-content: center;}
+h1 {font-size: 26px; color:blueviolet;direction: rtl;text-align: center;}
+.minus{background-color:red;}
+input,textarea{direction: rtl; align-items: center;}
+#owner{margin:0 auto;width:1200px;text-align:center}
+:invalid{background-color: red;}
+:valid{background-color: green;}
+.notshown{display:none}
+table,tr,td{color:black; border: double;}
+legend{ direction: rtl; text-align:center; font-size: 26px; color:blueviolet;}
+#transaction {
+    text-align: center;
+    direction: rtl;
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+}
+#asmachta, #note {background-color: white;}

@@ -1,0 +1,43 @@
+<br>
+<div id="transaction">
+  <legend>ביצוע פעולות</legend>
+  <label for=amount>סכום:</label>
+  <input required type=number id=amount min=1 [(ngModel)]="currentAmount" />
+  <br>
+  <br>
+  <label for=asmachta>אסמכתא:</label>
+  <textarea id=asmachta [(ngModel)]="currentTransactionAsmachta" minlength=1></textarea>
+  <br>
+  <br>
+  <label required for=taarich>תאריך:</label>
+  <input required type=date id=taarich [(ngModel)]="currentTransactionDateS" />
+  <br>
+  <br>
+  <label required for=sugpeula>סוג פעולה:</label>
+  <select required id=sugpeula [(ngModel)]="currentTransactionType">
+    <option>נא לבחור</option>
+    <option *ngIf="all_actions.length==0" value={{0}}>{{transactionTypeNames[0]}}</option>
+    <option *ngIf="all_actions.length==0" value={{1}}>{{transactionTypeNames[1]}}</option>
+    <option *ngIf="all_actions.length>0" value={{1}}>{{transactionTypeNames[1]}}</option>
+    <option *ngIf="all_actions.length>0" value={{2}}>{{transactionTypeNames[2]}}</option>
+  </select>
+  <br>
+  <br>
+  <label for=note>הערה:</label>
+  <textarea id=note [(ngModel)]="note"></textarea>
+  <br>
+  <br>
+  <button type="button" (click)='doTransaction();'>בצע פעולה </button>
+  <br>
+  <br>
+  <p dir=rtl *ngIf="!lastActionFail">
+  </p>
+  <div id="transactions" *ngIf="show_action">
+    <p *ngIf="all_actions.length==0">
+      לא נמצאו פעולות לחשבון
+    </p>
+    <p *ngIf="lastActionFail" dir="rtl">
+      פעולת נדחתה עקב חריגה צפויה מתקרת אשראי של <bdo dir="ltr">{{accountDetails.limit|currency:'ILS'}}</bdo>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+div,p{text-align: center;direction: rtl;align-items: center; justify-content: center;}
+th {font-size: 26px; color:blueviolet;direction: rtl;text-align: center; width: auto;}
+.minus{background-color:red;}
+input,textarea {direction: rtl;}
+#owner,#transaction {margin:0 auto;width:1200px;text-align:center}
+:invalid{background-color: red;}
+.notshown{display:none}
+table,tr,td{color:black; border: double;}
+body { direction: rtl; text-align:center; }
+button { width: 40px; height:30px; text-align: center;}

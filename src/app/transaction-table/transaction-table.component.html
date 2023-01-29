@@ -1,0 +1,42 @@
+<br>
+<div>
+<div id="transactions" *ngIf="show_action">
+    <p *ngIf="all_actions.length==0">
+      לא נמצאו פעולות לחשבון
+    </p>
+
+    <table *ngIf="all_actions.length>0" dir=rtl align="center" style="border: 1;">
+        <th>טבלת תנועות</th>
+      <tr>
+        <td></td>
+        <td>תאריך</td>
+        <td>סכום</td>
+        <td>סוג פעולה</td>
+        <td>יתרה</td>
+        <!--<td>אסמכתא</td>
+        <td>הערה</td>-->
+      </tr>
+      <tr *ngFor="let action of all_actions" [class.minus]='action.balance<0'>
+        <td><a routerLink="/TransactionDetails/{{action.counter}}"><button>
+            {{action.counter}}
+          </button></a></td>
+        <td>{{action.trnDate | date : 'dd/MM/yyyy'}}</td>
+        <td>{{action.amount | currency:'ILS'}}</td>
+        <td>{{transactionTypeNames[action.trnTyp]}}</td>
+        <td>{{action.balance | currency:'ILS'}}</td>
+       <!-- <td >{{action.asmachta || action.counter}}</td> 
+        <td >{{action.note }}</td>-->
+      </tr>
+    </table>
+  </div>
+ <!--
+  <p *ngIf="!lastActionFail">
+    {{transaction}}
+  </p>
+ <p *ngIf="!lastActionFail" [class.minus]='currentBalance<0'>
+    your current balance is: {{currentBalance|currency:'ILS'}}
+  </p>-->
+  <p *ngIf="lastActionFail" dir="rtl">
+    פעולת נדחתה עקב חריגה צפויה מתקרת אשראי של <bdo dir="ltr">{{accountDetails.limit|currency:'ILS'}}</bdo>
+  </p>
+</div>
